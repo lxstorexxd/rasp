@@ -84,6 +84,7 @@ class ScheduleChecker:
             # Если контрольная сумма отсутствует, инициализируем её
             self.last_checksums[url] = current_checksum
             print(f"Контрольная сумма для {url} инициализирована.")
+            self.save_file(file_data, url)
             return False  # Первый запуск: изменений нет, только инициализация
         
         if current_checksum != last_checksum:
