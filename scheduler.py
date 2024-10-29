@@ -4,6 +4,7 @@ import hashlib
 import os
 from datetime import datetime
 from typing import List, Optional
+from converter import PDFConverter
 
 class ScheduleChecker:
     def __init__(self, urls: List[str], download_folder: str = "schedule"):
@@ -62,6 +63,9 @@ class ScheduleChecker:
         with open(file_path, "wb") as file:
             file.write(data)
         print(f"Сохранен новый файл: {file_path}")
+
+        pdf_converter = PDFConverter(pdf_path=file_path, output_folder=f"{self.download_folder}/image/")
+        pdf_converter.convert_to_images()
 
         return file_path
 
