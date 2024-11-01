@@ -7,7 +7,7 @@ from typing import List, Optional
 from converter import PDFConverter
 
 class ScheduleChecker:
-    def __init__(self, urls: List[str], download_folder: str = "schedule"):
+    def __init__(self, urls: List[str], download_folder: str = "schedule/pdf"):
         """
         Инициализация класса для проверки изменений расписания по нескольким ссылкам.
         
