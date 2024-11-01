@@ -64,7 +64,7 @@ class ScheduleChecker:
             file.write(data)
         print(f"Сохранен новый файл: {file_path}")
 
-        pdf_converter = PDFConverter(pdf_path=file_path, output_folder=f"{self.download_folder}/image/")
+        pdf_converter = PDFConverter(pdf_path=file_path, output_folder=f"{self.download_folder}/../image/")
         pdf_converter.convert_to_images()
 
         return file_path
